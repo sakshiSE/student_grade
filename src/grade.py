@@ -1,41 +1,74 @@
-def main():
-    marks=[]
-    print("enter the marks for the 5 subjects :")
+"""
+Student Grade Prediction System
 
-    for i in range(5):
-       marks.append(int(input("enter the marks:")))
+This program accepts marks for five subjects,
+calculates the average, and assigns a grade.
 
-    total=0
-    for m in marks:
-        total=total+m
+Author: Sakshi Gaonkar
+"""
 
-    average=total/5
-    result=grades(average)
+def calculate_average(marks):
+    """Calculate the average of the given marks."""
+    return sum(marks) / len(marks)
 
-    print("Average : ",average)
-    print("Grade : ",result) 
 
 def grades(average):
-    if average >=90 :
+    """Return grade based on average marks."""
+
+    if average >= 90:
         return "A+"
 
     elif average >= 75:
-        return "A" 
+        return "A"
 
-    elif average >= 60: 
+    elif average >= 60:
         return "B"
-        
+
     elif average >= 50:
         return "C"
-        
-    else :
+
+    else:
         return "Fail"
 
 
+def get_marks():
+    """Read marks for five subjects with validation."""
+
+    marks = []
+
+    print("\nEnter marks for 5 subjects (0-100)\n")
+
+    for i in range(1, 6):
+
+        while True:
+
+            try:
+                mark = float(input(f"Subject {i}: "))
+
+                if 0 <= mark <= 100:
+                    marks.append(mark)
+                    break
+
+                print("Marks must be between 0 and 100.")
+
+            except ValueError:
+                print("Please enter a valid number.")
+
+    return marks
 
 
+def main():
+
+    marks = get_marks()
+
+    average = calculate_average(marks)
+
+    grade = grades(average)
+
+    print("\n------ Result ------")
+    print(f"Average : {average:.2f}")
+    print(f"Grade   : {grade}")
 
 
-
-if __name__ =="__main__":
+if __name__ == "__main__":
     main()
