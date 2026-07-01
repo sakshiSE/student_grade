@@ -4,7 +4,6 @@ Student Grade Prediction System
 This program accepts marks for five subjects,
 calculates the average, and assigns a grade.
 
-Author: Sakshi Gaonkar
 """
 
 def calculate_average(marks):
