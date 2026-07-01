@@ -1,4 +1,4 @@
-#  Student Grade Prediction System
+#  Student Grade Calculator
 
 A simple Python program that calculates a student's average marks across five subjects and assigns a grade based on predefined grading criteria. The project also includes automated unit testing using **Pytest** to verify grading logic and ensure code reliability.
 
